@@ -79,6 +79,7 @@ const ProjectDetail = ({ data }) => {
         ,
             <Button
           variant="secondary"
+          onClick={() => viewTasks()}
         >
           View Tasks
         </Button>
