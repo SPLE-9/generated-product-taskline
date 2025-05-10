@@ -13,6 +13,8 @@ import { HeaderContext } from "@/commons/components"
 import ProjectDetail from '../components/ProjectDetail'
 import getProjectDetailData from '../services/getProjectDetailData'
 const ProjectDetailPage = props => {
+	const { projectId } = useParams();
+
 const [isLoading, setIsLoading] = useState({
 	projectDetail: false,
 

@@ -45,7 +45,7 @@ const ProjectsTable = ({ projectListData,
   ]}
         itemsEvents={(projectsItem) => [
           
-          <Link to={`/projects/:projectId`}>
+          <Link to={`/projects/${projectsItem.projectId}`}>
             <Button
               size="sm"
               variant=
