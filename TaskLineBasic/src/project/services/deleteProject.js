@@ -9,7 +9,7 @@ const deleteProject = (data = {}) => {
 	const { getToken } = tokenManager();
 	const token = getToken();
 	
-	return axios.post(`${environment.rootApi}/call/project/delete`, body,
+	return axios.delete(`${environment.rootApi}/call/project/delete`, body,
 	{
 		params: { token },
 		

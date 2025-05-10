@@ -9,7 +9,7 @@ const updateProject = (data = {}) => {
 	const { getToken } = tokenManager();
 	const token = getToken();
 	
-	return axios.post(`${environment.rootApi}/call/project/update`, body,
+	return axios.put(`${environment.rootApi}/call/project/update`, body,
 	{
 		params: { token },
 		
