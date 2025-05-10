@@ -9,10 +9,10 @@ const deleteProject = (data = {}) => {
 	const { getToken } = tokenManager();
 	const token = getToken();
 	
-	return axios.delete(`${environment.rootApi}/call/project/delete`, body,
+	return axios.delete(`${environment.rootApi}/call/project/delete`,
 	{
 		params: { token },
-		
+		data: cleanFormData(body),
 		headers: {
 			'Authorization': token,
 			
