@@ -10,6 +10,7 @@ import { useParams } from "@/commons/hooks/useParams"
 import { useAuth } from '@/commons/auth';
 import { Button, Modal,Spinner } from '@/commons/components';
 import { isMobile } from '@/commons/utils/responsive';
+import deleteTask from '../services/deleteTask';
 
 import * as Layouts from "@/commons/layouts";
 
@@ -25,12 +26,12 @@ const TaskTable = ({ listTask,
   
   const navigate = useNavigate();
   const detail = async (taskItem) => {
-    isMobile() && navigate(`/task/${taskId}`
+    isMobile() && navigate(`/task/${taskItem.taskId}`
     );
   };
 
   const hapus = async (taskItem) => {
-      await deleteProject({
+      await deleteTask({
         taskId: taskItem.taskId,
       });
       window.location.reload();
@@ -67,7 +68,7 @@ const TaskTable = ({ listTask,
                           "tertiary"
                onClick={() => hapus(taskItem)}
             >
-               Hapus
+               Delete
             </Button>
           </Link>
           
