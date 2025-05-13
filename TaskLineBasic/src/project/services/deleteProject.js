@@ -2,6 +2,7 @@ import axios from 'axios'
 import tokenManager from '@/commons/utils/token'
 import environment from '@/commons/utils/environment'
 import cleanFormData from '@/commons/utils/cleanFormData'
+import { notifyError } from '@/commons/utils/toaster'
 
 
 const deleteProject = (data = {}) => {
@@ -18,6 +19,10 @@ const deleteProject = (data = {}) => {
 			'Authorization': token,
 			
 		}
-	})} 
+	}).catch((error) => {
+		console.error(error);
+		notifyError(error);
+		throw error;
+	})}
 
 export default deleteProject
