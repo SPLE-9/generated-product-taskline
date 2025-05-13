@@ -39,7 +39,8 @@ const FormCreateTask = ({
   } = useForm()
   
   
-  
+  const [searchParams] = useSearchParams();
+  const projectId = searchParams.get("projectId");
   
   const navigate = useNavigate()
   
@@ -47,9 +48,10 @@ const FormCreateTask = ({
     const cleanData = cleanFormData(data)
     saveTask({
       ...cleanData,
+      projectId,
     })
     .then(({ data: { data } }) => {
-      navigate(`/task`)
+      navigate(`/task?projectId=${projectId}`)
   	notifySuccess(`Save Task berhasil!`);
     })
     .catch((error) => {
