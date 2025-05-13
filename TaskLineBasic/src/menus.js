@@ -48,10 +48,3 @@ addMenu({
     permission: '',
 	subMenus: []
 })
-
-addMenu({
-	route: '/task',
-    label: 'Task',
-    permission: '',
-	subMenus: []
-})
