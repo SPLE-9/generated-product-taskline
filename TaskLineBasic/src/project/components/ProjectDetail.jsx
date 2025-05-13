@@ -8,6 +8,7 @@ import { useNavigate, Link } from "react-router";
 
 import { useAuth } from '@/commons/auth';
 import { Button, Detail, VisualizationAttr, Modal, Spinner } from '@/commons/components';
+import { notifyError, notifySuccess } from '@/commons/utils/toaster'
 
 import deleteProject from '../services/deleteProject';
 
@@ -39,8 +40,15 @@ const ProjectDetail = ({ data }) => {
     const confirmDelete = async () => {
       await deleteProject({
         projectId: data.projectId,
+      })
+      .then(({ data: { data } }) => {
+          navigate(`/projects`)
+          notifySuccess(`Delete project berhasil!`);
+      })
+      .catch((error) => {
+      console.error(error);
+          notifyError(error);
       });
-      navigate('/projects');
     };
   
   return (
