@@ -28,6 +28,13 @@ const TaskTable = ({ listTask,
     isMobile() && navigate(`/task/${taskId}`
     );
   };
+
+  const hapus = async (taskItem) => {
+      await deleteProject({
+        taskId: taskItem.taskId,
+      });
+      window.location.reload();
+    };
   
   
   return (
@@ -67,7 +74,7 @@ const TaskTable = ({ listTask,
           
   ,
           
-  <Link to={`/task/${taskId}`}>
+  <Link to={`/task/${taskItem.taskId}`}>
     <Button
       size="sm"
       variant=
