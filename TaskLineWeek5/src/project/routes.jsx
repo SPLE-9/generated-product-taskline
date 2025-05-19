@@ -9,6 +9,7 @@ import CreateProjectPage from './containers/CreateProjectPage'
 import ProjectPage from './containers/ProjectPage'
 import ProjectDetailPage from './containers/ProjectDetailPage'
 import EditProjectPage from './containers/EditProjectPage'
+import AddProjectMemberPage from './containers/AddProjectMemberPage'
 
 const projectRoutes = [
 { 
@@ -35,6 +36,12 @@ const projectRoutes = [
 { 
 	path: "/projects/:projectId",
 	element: <ProjectDetailPage />,
+}
+
+,
+{ 
+	path: "/projects/:projectId/add-member",
+	element: <AddProjectMemberPage />,
 }
 
 	
