@@ -48,3 +48,10 @@ addMenu({
     permission: '',
 	subMenus: []
 })
+
+addMenu({
+    route: '/notes',
+    label: 'Notes',
+    permission: '',
+    subMenus: []
+})

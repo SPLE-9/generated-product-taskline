@@ -1,7 +1,7 @@
 /*
-	Generated on 09/05/2025 by UI Generator PRICES-IDE
+	Generated on 23/05/2025 by UI Generator PRICES-IDE
 	https://amanah.cs.ui.ac.id/research/ifml-regen
-	version 3.9.0
+	version 3.8.0
 */
 import React, { useEffect, useState, useContext} from 'react'
 import { Button, Spinner } from "@/commons/components"
@@ -11,14 +11,14 @@ import { useParams } from "@/commons/hooks/useParams"
 import { HeaderContext } from "@/commons/components"
 import { useNavigate } from "react-router";
 import { useAuth } from '@/commons/auth';
-import ListTable from "../components/ListTable";
+import NotesCard from "../components/NotesCard";
 
 import getNotes from '../services/getNotes'
 const NotesPage = props => {
 const { checkPermission } = useAuth();
 
 	const [isLoading, setIsLoading] = useState({
-	notesList: false,
+	listNotes: false,
 
 	});
 	const { setTitle } = useContext(HeaderContext);
@@ -28,17 +28,14 @@ const [notes, setNotes] = useState()
 	
 	
 
-
-	useEffect(() => {
-		
-
+useEffect(() => {
 		const fetchData = async () => {
 			try {
-				setIsLoading(prev => ({...prev, notesList: true}))
+				setIsLoading(prev => ({...prev, listNotes: true}))
 				const { data: notes } = await getNotes()
 				setNotes(notes.data)
 			} finally {
-				setIsLoading(prev => ({...prev, notesList: false}))
+				setIsLoading(prev => ({...prev, listNotes: false}))
 			}
 		}
 		fetchData()
@@ -61,30 +58,22 @@ return (
 			  	</Link>
 			  	
 			  	
-			  	<Link to={`/notes/edit?notesId
-			  	`}>
-			  		<Button className="p-2" variant="primary">
-			  		  Edit Notes
-			  		</Button>
-			  	</Link>
-			  	
-			  	
 			
 			  </Layouts.ViewContainerButtonLayout>
 			</>
 		}
 	>
-<Layouts.ListContainerTableLayout
-	title={"Notes List"}
-	singularName={"List"}
+<Layouts.ListContainerCardLayout
+	title={"List Notes"}
+	singularName={"Notes"}
 	items={[notes]}
-	isLoading={isLoading.notesList}
+	isLoading={isLoading.listNotes}
 >
-	<ListCard
+	<NotesCard
 		notes={notes}
 		
-	/>
-</Layouts.ListContainerTableLayout>
+  	/>
+</Layouts.ListContainerCardLayout>
 
 	</Layouts.ViewContainerLayout>
   )

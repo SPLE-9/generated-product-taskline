@@ -1,7 +1,7 @@
 /*
-	Generated on 09/05/2025 by UI Generator PRICES-IDE
+	Generated on 23/05/2025 by UI Generator PRICES-IDE
 	https://amanah.cs.ui.ac.id/research/ifml-regen
-	version 3.9.0
+	version 3.8.0
 */
 import React from "react";
 import { Controller, useForm } from "react-hook-form";
@@ -33,10 +33,16 @@ import * as Layouts from "@/commons/layouts";
 
 const FormCreateNotesForm = ({ 
  }) => {
+  
+  
+  
   const { 
     control, 
     handleSubmit,
   } = useForm()
+  
+  
+  
   
   
   
@@ -71,25 +77,8 @@ const FormCreateNotesForm = ({
 		  formFields={[
 			  
 			  <Controller
-			    key="notes_id"
-		        name="notes_id"
-		        control={control}
-				rules={{ required: "Harap masukkan notes id" }} 
-		        render={({ field, fieldState }) => (
-				  <InputField
-		            label="Notes ID"
-		            placeholder="Masukkan notes id"
-		            fieldState={fieldState}
-					{...field}
-					isRequired={true}
-		          />
-		        )}
-		      />
-	,
-			  
-			  <Controller
-			    key="notes_title"
-		        name="notes_title"
+			    key="title"
+		        name="title"
 		        control={control}
 				rules={{ required: "Harap masukkan notes title" }} 
 		        render={({ field, fieldState }) => (

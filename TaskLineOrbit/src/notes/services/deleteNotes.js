@@ -1,22 +1,22 @@
 import axios from 'axios'
 import tokenManager from '@/commons/utils/token'
 import environment from '@/commons/utils/environment'
+import cleanFormData from '@/commons/utils/cleanFormData'
 
-
-const saveNotes = (data = {}) => {
+const deleteNotes = (data = {}) => {
 	let body = data;
 
 	const { getToken } = tokenManager();
 	const token = getToken();
 	
-	return axios.post(`${environment.rootApi}/call/notes/save`, body,
+	return axios.delete(`${environment.rootApi}/call/notes/delete`, 
 	{
 		params: { token },
-		
+		data: cleanFormData(body),
 		headers: {
 			'Authorization': token,
 			
 		}
 	})} 
 
-export default saveNotes
+export default deleteNotes

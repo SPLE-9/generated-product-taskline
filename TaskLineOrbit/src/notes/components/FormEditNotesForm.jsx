@@ -1,7 +1,7 @@
 /*
-	Generated on 09/05/2025 by UI Generator PRICES-IDE
+	Generated on 23/05/2025 by UI Generator PRICES-IDE
 	https://amanah.cs.ui.ac.id/research/ifml-regen
-	version 3.9.0
+	version 3.8.0
 */
 import React from "react";
 import { Controller, useForm } from "react-hook-form";
@@ -26,7 +26,7 @@ import {
   findAllowedPermission,
 } from "@/commons/constants/allowedPermission";
 import cleanFormData from "@/commons/utils/cleanFormData";
-import saveNotes from '../services/saveNotes'
+import updateNotes from '../services/updateNotes'
 
 import { notifyError, notifySuccess} from "@/commons/utils/toaster";
 import * as Layouts from "@/commons/layouts";
@@ -34,6 +34,9 @@ import * as Layouts from "@/commons/layouts";
 const FormEditNotesForm = ({ 
 	editNotesData
  }) => {
+  
+  
+  
   const { 
     control, 
     handleSubmit,
@@ -42,16 +45,19 @@ const FormEditNotesForm = ({
   
   
   
+  
+  
+  
   const navigate = useNavigate()
   
   const editNotes = (data) => {
     const cleanData = cleanFormData(data)
-    saveNotes({
+    updateNotes({
       ...cleanData,
     })
     .then(({ data: { data } }) => {
      navigate(`/notes`)
-  	notifySuccess(`Save Notes berhasil!`);
+  	notifySuccess(`Update Notes berhasil!`);
     })
     .catch((error) => {
       console.error(error);
@@ -72,14 +78,14 @@ const FormEditNotesForm = ({
 		  formFields={[
 			  
 			  <Controller
-			    key="slot"
-		        name="slot"
+			    key="title"
+		        name="title"
 		        control={control}
 		        render={({ field, fieldState }) => (
 				  <InputField
 		            label="Notes Title"
 		            placeholder="Masukkan notes title"
-		            defaultValue={editNotesData.slot}	            fieldState={fieldState}
+		            defaultValue={editNotesData.title}	            fieldState={fieldState}
 					{...field}
 					isRequired={false}
 		          />
@@ -88,14 +94,14 @@ const FormEditNotesForm = ({
 	,
 			  
 			  <Controller
-			    key="slot"
-		        name="slot"
+			    key="notes"
+		        name="notes"
 		        control={control}
 		        render={({ field, fieldState }) => (
 				  <InputField
 		            label="Notes"
 		            placeholder="Masukkan notes"
-		            defaultValue={editNotesData.slot}	            fieldState={fieldState}
+		            defaultValue={editNotesData.notes}	            fieldState={fieldState}
 					{...field}
 					isRequired={false}
 		          />

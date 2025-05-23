@@ -3,13 +3,13 @@ import tokenManager from '@/commons/utils/token'
 import environment from '@/commons/utils/environment'
 
 
-const saveNotes = (data = {}) => {
+const updateNotes = (data = {}) => {
 	let body = data;
 
 	const { getToken } = tokenManager();
 	const token = getToken();
 	
-	return axios.post(`${environment.rootApi}/call/notes/save`, body,
+	return axios.put(`${environment.rootApi}/call/notes/update`, body,
 	{
 		params: { token },
 		
@@ -19,4 +19,4 @@ const saveNotes = (data = {}) => {
 		}
 	})} 
 
-export default saveNotes
+export default updateNotes
