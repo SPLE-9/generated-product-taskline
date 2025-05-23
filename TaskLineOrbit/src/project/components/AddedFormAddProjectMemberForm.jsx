@@ -58,6 +58,7 @@ const AddedFormAddProjectMemberForm = ({
   	notifySuccess(`SaveProjectMember ProjectWithMembers berhasil!`);
     })
     .catch((error) => {
+		navigate(`/projects/${projectId}`)
       console.error(error);
           notifyError(error);
     });
