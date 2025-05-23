@@ -1,7 +1,7 @@
 /*
-	Generated on 09/05/2025 by UI Generator PRICES-IDE
+	Generated on 23/05/2025 by UI Generator PRICES-IDE
 	https://amanah.cs.ui.ac.id/research/ifml-regen
-	version 3.9.0
+	version 3.10.0
 */
 import React, { useEffect, useState, useContext} from 'react'
 import { Button, Spinner } from "@/commons/components"
@@ -31,7 +31,7 @@ return (
 			<Layouts.ViewContainerButtonLayout>
 			  	<Link to={`/projects
 			  	`}>
-			  		<Button className="p-2" variant="primary">
+			  		<Button id="_V0_ZQCHqEfChD41pi9QTAQ" className="p-2" variant="primary">
 			  		  Back
 			  		</Button>
 			  	</Link>

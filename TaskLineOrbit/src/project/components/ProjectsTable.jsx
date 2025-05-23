@@ -1,7 +1,7 @@
 /*
-	Generated on 09/05/2025 by UI Generator PRICES-IDE
+	Generated on 23/05/2025 by UI Generator PRICES-IDE
 	https://amanah.cs.ui.ac.id/research/ifml-regen
-	version 3.9.0
+	version 3.10.0
 */
 import React from 'react';
 import { Link, useNavigate } from "react-router";
@@ -24,7 +24,7 @@ const ProjectsTable = ({ projectListData,
   
   const navigate = useNavigate();
   const detail = async (projectsItem) => {
-    isMobile() && navigate(`/projects/:projectId`
+    isMobile() && navigate(`/projects/${projectsItem.projectId}`
     );
   };
   
@@ -47,6 +47,7 @@ const ProjectsTable = ({ projectListData,
           
           <Link to={`/projects/${projectsItem.projectId}`}>
             <Button
+          	id="_dV4xICHlEfChD41pi9QTAQ"
               size="sm"
               variant=
                   "primary"

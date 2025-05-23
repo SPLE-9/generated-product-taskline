@@ -10,64 +10,54 @@ import { Link } from "react-router";
 import { useParams } from "@/commons/hooks/useParams"
 import { HeaderContext } from "@/commons/components"
 import { useSearchParams } from "react-router";
-import FormEditProjectForm from '../components/FormEditProjectForm'
+import AddedFormAddProjectMemberForm from '../components/AddedFormAddProjectMemberForm'
 
-import getEditProjectData from '../services/getEditProjectData'
-const EditProjectPage = props => {
+import getMemberListData from '../services/getMemberListData'
+const AddProjectMemberPage = props => {
 const { projectId } = useParams()
 
 	const [isLoading, setIsLoading] = useState({
-	editProjectForm: false,
+	addProjectMemberForm: false,
 
 	});
 	const { setTitle } = useContext(HeaderContext);
 
-const [editProjectData, setEditProjectData] = useState()
+const [memberListData, setMemberListData] = useState()
 
 useEffect(() => {
     const fetch = async () => {
-	  setIsLoading(prev => ({...prev, editProjectForm: true}))
-		const { data: editProjectDataResponse } = await getEditProjectData({ projectId  })
+	  setIsLoading(prev => ({...prev, addProjectMemberForm: true}))
+		const { data: memberListDataResponse } = await getMemberListData({ projectId  })
 
-	    setEditProjectData(editProjectDataResponse.data)
+	    setMemberListData(memberListDataResponse.data)
 
 
-	    setIsLoading(prev => ({...prev, editProjectForm: false}))
+	    setIsLoading(prev => ({...prev, addProjectMemberForm: false}))
     }
 	fetch()
   }, [])
 
 	
 	useEffect(() => {
-		setTitle("Edit Project Page")
+		setTitle("Add Project Member Page")
 	}, []);
 return (
 	<Layouts.ViewContainerLayout
 		buttons={
 			<>
-			<Layouts.ViewContainerButtonLayout>
-			  	<Link to={`/projects/${projectId}
-			  	`}>
-			  		<Button id="_h1v1YCHqEfChD41pi9QTAQ" className="p-2" variant="primary">
-			  		  Back
-			  		</Button>
-			  	</Link>
-			  	
-			  	
-			
-			  </Layouts.ViewContainerButtonLayout>
+			<></>
 			</>
 		}
 	>
 <Layouts.FormContainerLayout
 		singularName={"Project"}
-		isLoading={isLoading.editProjectForm}
+		isLoading={isLoading.addProjectMemberForm}
 	>
-		{editProjectData ? 
+		{memberListData ? 
 		(<>
-		 <FormEditProjectForm
+		 <AddedFormAddProjectMemberForm
 			{...{ 
-				editProjectData
+				memberListData
 				}}
 		 /> 
 		</>)  : (<></>)}
@@ -76,5 +66,5 @@ return (
 	</Layouts.ViewContainerLayout>
   )
 }
-export default EditProjectPage
+export default AddProjectMemberPage
 

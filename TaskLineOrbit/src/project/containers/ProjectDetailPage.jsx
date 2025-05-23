@@ -1,7 +1,7 @@
 /*
-	Generated on 09/05/2025 by UI Generator PRICES-IDE
+	Generated on 23/05/2025 by UI Generator PRICES-IDE
 	https://amanah.cs.ui.ac.id/research/ifml-regen
-	version 3.9.0
+	version 3.10.0
 */
 import React, { useEffect, useState, useContext} from 'react'
 import { Button, Spinner } from "@/commons/components"
@@ -9,14 +9,20 @@ import * as Layouts from '@/commons/layouts';
 import { Link } from "react-router";
 import { useParams } from "@/commons/hooks/useParams"
 import { HeaderContext } from "@/commons/components"
-
+import { useNavigate } from "react-router";
+import { useAuth } from '@/commons/auth';
 import ProjectDetail from '../components/ProjectDetail'
 import getProjectDetailData from '../services/getProjectDetailData'
-const ProjectDetailPage = props => {
-	const { projectId } = useParams();
+import ProjectTable from "../components/ProjectTable";
 
-const [isLoading, setIsLoading] = useState({
+import getProjectMemberListData from '../services/getProjectMemberListData'
+const ProjectDetailPage = props => {
+const { projectId } = useParams()
+	const { checkPermission } = useAuth();
+
+	const [isLoading, setIsLoading] = useState({
 	projectDetail: false,
+	tableProjectMembers: false,
 
 	});
 	const { setTitle } = useContext(HeaderContext);
@@ -34,6 +40,26 @@ useEffect(() => {
 	}
 	fetchData()
 }, [])
+const [projectMemberListData, setProjectMemberListData] = useState()
+	
+	
+	
+
+
+	useEffect(() => {
+		
+
+		const fetchData = async () => {
+			try {
+				setIsLoading(prev => ({...prev, tableProjectMembers: true}))
+				const { data: projectMemberListData } = await getProjectMemberListData({ projectId })
+				setProjectMemberListData(projectMemberListData.data)
+			} finally {
+				setIsLoading(prev => ({...prev, tableProjectMembers: false}))
+			}
+		}
+		fetchData()
+  	}, [])
 
 	
 	useEffect(() => {
@@ -46,8 +72,16 @@ return (
 			<Layouts.ViewContainerButtonLayout>
 			  	<Link to={`/projects
 			  	`}>
-			  		<Button className="p-2 w-full" variant="primary">
+			  		<Button id="_cV_oICHqEfChD41pi9QTAQ" className="p-2 w-full" variant="primary">
 			  		  Back
+			  		</Button>
+			  	</Link>
+			  	
+			  	
+			  	<Link to={`/projects/${projectId}/add-member
+			  	`}>
+			  		<Button id="_vf7-cDJGEfCBKLsveFPh7w" className="p-2" variant="primary">
+			  		  Add Project Member
 			  		</Button>
 			  	</Link>
 			  	
@@ -66,6 +100,17 @@ return (
 >
 	<ProjectDetail {...{ data : { ...projectDetailData }}} />
 </Layouts.DetailContainerLayout>
+<Layouts.ListContainerTableLayout
+	title={"Table Project Members"}
+	singularName={"Project"}
+	items={[projectMemberListData]}
+	isLoading={isLoading.tableProjectMembers}
+>
+	<ProjectTable
+		projectMemberListData={projectMemberListData}
+		
+	/>
+</Layouts.ListContainerTableLayout>
 
 	</Layouts.ViewContainerLayout>
   )

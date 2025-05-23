@@ -5,6 +5,7 @@
 */
 import React from "react";
 import { Controller, useForm } from "react-hook-form";
+import { useParams } from "@/commons/hooks/useParams"
 import { useNavigate, useSearchParams } from "react-router";
 import {
   Button,
@@ -26,31 +27,35 @@ import {
   findAllowedPermission,
 } from "@/commons/constants/allowedPermission";
 import cleanFormData from "@/commons/utils/cleanFormData";
-import saveProject from '../services/saveProject'
+import saveProjectMemberProjectWithMembers from '../services/saveProjectMemberProjectWithMembers'
 
 import { notifyError, notifySuccess} from "@/commons/utils/toaster";
 import * as Layouts from "@/commons/layouts";
 
-const FormCreateProjectForm = ({ 
+const AddedFormAddProjectMemberForm = ({ 
+	memberListData
  }) => {
   const { 
     control, 
     handleSubmit,
-  } = useForm()
+  } = useForm({ defaultValues: memberListData })
   
   
   
   
   const navigate = useNavigate()
+
+  const { projectId } = useParams()
   
-  const createProject = (data) => {
+  const addMember = (data) => {
     const cleanData = cleanFormData(data)
-    saveProject({
+    saveProjectMemberProjectWithMembers({
       ...cleanData,
+	  projectId: projectId
     })
     .then(({ data: { data } }) => {
-      navigate(`/projects`)
-  	notifySuccess(`Save Project berhasil!`);
+     navigate(`/projects/${projectId}`)
+  	notifySuccess(`SaveProjectMember ProjectWithMembers berhasil!`);
     })
     .catch((error) => {
       console.error(error);
@@ -62,50 +67,40 @@ const FormCreateProjectForm = ({
   return (
 	<div>
 	  <Layouts.FormComponentLayout
-		  title="Create Project Form" 
-		  onSubmit={handleSubmit(createProject)}
+		  title="Add Project Member Form" 
+		  onSubmit={handleSubmit(addMember)}
 	
 	    vas={[
 		  ]}
 	
 		  formFields={[
-			  
-			  <Controller
-			    key="title"
-		        name="title"
-		        control={control}
-		        render={({ field, fieldState }) => (
-				  <InputField
-		            label="Project Title"
-		            placeholder="Masukkan project title"
-		            fieldState={fieldState}
-					{...field}
-					isRequired={false}
-		          />
-		        )}
-		      />
-	,
-			  
-			  <Controller
-			    key="description"
-		        name="description"
-		        control={control}
-		        render={({ field, fieldState }) => (
-				  <RichTextField
-		            label="Project Description"
-		            placeholder="Masukkan project description"
-		            fieldState={fieldState}
-					{...field}
-					isRequired={false}
-		          />
-		        )}
-		      />
-		  ,
+		  
 	
+		  
+		  <Controller
+		    key="memberId"
+	        name="memberId"
+	        control={control}
+	        render={({ field, fieldState }) => (
+					<SelectionField
+				
+	            label="Member"
+	            options={memberListData}
+				optionKey="memberId"
+	            optionLabel="name"
+	            placeholder="Masukkan member"
+					fieldState={fieldState}
+					defaultValue={memberListData.memberId}
+	            {...field}
+					isRequired={false}
+	          />
+	
+	        )}
+	      />
 		  ]}
 	
 		  itemsEvents={[
-				<Button id="_5pW1gCHfEfChD41pi9QTAQ" key="Create Project" type="submit" variant="primary">Create Project</Button>
+				<Button id="_sXE3cDJDEfCBKLsveFPh7w" key="Add Member" type="submit" variant="primary">Add Member</Button>
 	    ]}
 	  />
 	    
@@ -113,4 +108,4 @@ const FormCreateProjectForm = ({
   )
 }
 
-export default FormCreateProjectForm
+export default AddedFormAddProjectMemberForm

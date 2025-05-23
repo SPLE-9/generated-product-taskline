@@ -1,7 +1,7 @@
 /*
-	Generated on 09/05/2025 by UI Generator PRICES-IDE
+	Generated on 23/05/2025 by UI Generator PRICES-IDE
 	https://amanah.cs.ui.ac.id/research/ifml-regen
-	version 3.9.0
+	version 3.10.0
 */
 import React from "react";
 import { Controller, useForm } from "react-hook-form";
@@ -106,7 +106,7 @@ const FormEditProjectForm = ({
 		  ]}
 	
 		  itemsEvents={[
-				<Button key="Edit Project" type="submit" variant="primary">Edit Project</Button>
+				<Button id="_BYA-wCHqEfChD41pi9QTAQ" key="Edit Project" type="submit" variant="primary">Edit Project</Button>
 	    ]}
 	  />
 	    

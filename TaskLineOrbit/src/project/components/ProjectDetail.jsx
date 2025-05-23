@@ -1,14 +1,13 @@
 /*
-	Generated on 09/05/2025 by UI Generator PRICES-IDE
+	Generated on 23/05/2025 by UI Generator PRICES-IDE
 	https://amanah.cs.ui.ac.id/research/ifml-regen
-	version 3.9.0
+	version 3.10.0
 */
 import React, { useContext } from 'react';
 import { useNavigate, Link } from "react-router";
 
 import { useAuth } from '@/commons/auth';
 import { Button, Detail, VisualizationAttr, Modal, Spinner } from '@/commons/components';
-import { notifyError, notifySuccess } from '@/commons/utils/toaster'
 
 import deleteProject from '../services/deleteProject';
 
@@ -26,7 +25,7 @@ const ProjectDetail = ({ data }) => {
         
       );
     };
-
+    
     const viewTasks = async () => {
       navigate(
         '/task?'
@@ -34,21 +33,12 @@ const ProjectDetail = ({ data }) => {
         
       );
     };
-    
-    
   
     const confirmDelete = async () => {
       await deleteProject({
         projectId: data.projectId,
-      })
-      .then(({ data: { data } }) => {
-          navigate(`/projects`)
-          notifySuccess(`Delete project berhasil!`);
-      })
-      .catch((error) => {
-      console.error(error);
-          notifyError(error);
       });
+      navigate('/projects');
     };
   
   return (
@@ -72,6 +62,7 @@ const ProjectDetail = ({ data }) => {
       ]}
       itemsEvents={[
             <Button
+              id="_skt2UCHmEfChD41pi9QTAQ"
               variant="secondary"
               onClick={() => edit()}
             >
@@ -79,6 +70,7 @@ const ProjectDetail = ({ data }) => {
             </Button>
         ,
             <Button
+          id="_3pUzQCHmEfChD41pi9QTAQ"
           variant="secondary"
           onClick={() => setShowModalConfirmDeleteProject(true)}
         >
@@ -86,16 +78,11 @@ const ProjectDetail = ({ data }) => {
         </Button>
         ,
             <Button
+          id="_ETjLICZxEfCpHrP5kP8MPQ"
           variant="secondary"
           onClick={() => viewTasks()}
         >
           View Tasks
-        </Button>
-        ,
-            <Button
-          variant="secondary"
-        >
-          View Burndown
         </Button>
         
       ]}
@@ -106,6 +93,7 @@ const ProjectDetail = ({ data }) => {
         >
            <Link to=''><Button variant="tertiary" onClick={() => setShowModalConfirmDeleteProject(false)}>Batal</Button></Link>
           <Button
+            id="_n1yzoCHnEfChD41pi9QTAQ"
             variant="secondary"
             onClick={() => confirmDelete()}
           >
