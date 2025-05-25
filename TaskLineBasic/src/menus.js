@@ -48,3 +48,17 @@ addMenu({
     permission: '',
 	subMenus: []
 })
+
+addMenu({
+	route: '/memberburndown',
+    label: 'Member Burndown',
+    permission: '',
+	subMenus: []
+})
+
+addMenu({
+	route: '/task',
+    label: 'Task',
+    permission: '',
+	subMenus: []
+})

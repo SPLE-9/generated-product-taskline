@@ -5,7 +5,9 @@ import roleRoutes from "@/role/routes";
 import staticPageRoutes from "@/staticPage/routes";
 import homeRoutes from "@/home/routes";
 import projectRoutes from "@/project/routes";
+import burndownByMemberRoutes from "@/burndownByMember/routes";
 import taskRoutes from "@/task/routes";
+import burndownByProjectRoutes from "@/burndownByProject/routes";
 
 const GlobalRoutes = () => {
   const router = useRoutes([
@@ -15,7 +17,9 @@ const GlobalRoutes = () => {
 	...roleRoutes,
 	...homeRoutes, 
 	...projectRoutes, 
+	...burndownByMemberRoutes, 
 	...taskRoutes, 
+	...burndownByProjectRoutes, 
   ])
   return router
 }

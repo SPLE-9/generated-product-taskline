@@ -6,37 +6,37 @@ Project
 
 
 /*
-	Generated on 09/05/2025 by UI Generator PRICES-IDE
+	Generated on 23/05/2025 by UI Generator PRICES-IDE
 	https://amanah.cs.ui.ac.id/research/ifml-regen
 	version 3.9.0
 */
 	
 /*
-	Generated on 09/05/2025 by UI Generator PRICES-IDE
+	Generated on 23/05/2025 by UI Generator PRICES-IDE
 	https://amanah.cs.ui.ac.id/research/ifml-regen
 	version 3.9.0
 */
 	
 /*
-	Generated on 09/05/2025 by UI Generator PRICES-IDE
+	Generated on 23/05/2025 by UI Generator PRICES-IDE
 	https://amanah.cs.ui.ac.id/research/ifml-regen
 	version 3.9.0
 */
 	
 /*
-	Generated on 09/05/2025 by UI Generator PRICES-IDE
+	Generated on 23/05/2025 by UI Generator PRICES-IDE
 	https://amanah.cs.ui.ac.id/research/ifml-regen
 	version 3.9.0
 */
 
 /*
-	Generated on 09/05/2025 by UI Generator PRICES-IDE
+	Generated on 23/05/2025 by UI Generator PRICES-IDE
 	https://amanah.cs.ui.ac.id/research/ifml-regen
 	version 3.9.0
 */
 
 /*
-	Generated on 09/05/2025 by UI Generator PRICES-IDE
+	Generated on 23/05/2025 by UI Generator PRICES-IDE
 	https://amanah.cs.ui.ac.id/research/ifml-regen
 	version 3.9.0
 */
@@ -52,31 +52,31 @@ Module Definition
 
 
 /*
-	Generated on 09/05/2025 by UI Generator PRICES-IDE
+	Generated on 23/05/2025 by UI Generator PRICES-IDE
 	https://amanah.cs.ui.ac.id/research/ifml-regen
 	version 3.9.0
 */
 	
 /*
-	Generated on 09/05/2025 by UI Generator PRICES-IDE
+	Generated on 23/05/2025 by UI Generator PRICES-IDE
 	https://amanah.cs.ui.ac.id/research/ifml-regen
 	version 3.9.0
 */
 	
 /*
-	Generated on 09/05/2025 by UI Generator PRICES-IDE
+	Generated on 23/05/2025 by UI Generator PRICES-IDE
 	https://amanah.cs.ui.ac.id/research/ifml-regen
 	version 3.9.0
 */
 	
 /*
-	Generated on 09/05/2025 by UI Generator PRICES-IDE
+	Generated on 23/05/2025 by UI Generator PRICES-IDE
 	https://amanah.cs.ui.ac.id/research/ifml-regen
 	version 3.9.0
 */
 
 /*
-	Generated on 09/05/2025 by UI Generator PRICES-IDE
+	Generated on 23/05/2025 by UI Generator PRICES-IDE
 	https://amanah.cs.ui.ac.id/research/ifml-regen
 	version 3.9.0
 */
@@ -92,25 +92,25 @@ Notes
 
 
 /*
-	Generated on 09/05/2025 by UI Generator PRICES-IDE
+	Generated on 23/05/2025 by UI Generator PRICES-IDE
 	https://amanah.cs.ui.ac.id/research/ifml-regen
 	version 3.9.0
 */
 	
 /*
-	Generated on 09/05/2025 by UI Generator PRICES-IDE
+	Generated on 23/05/2025 by UI Generator PRICES-IDE
 	https://amanah.cs.ui.ac.id/research/ifml-regen
 	version 3.9.0
 */
 	
 /*
-	Generated on 09/05/2025 by UI Generator PRICES-IDE
+	Generated on 23/05/2025 by UI Generator PRICES-IDE
 	https://amanah.cs.ui.ac.id/research/ifml-regen
 	version 3.9.0
 */
 
 /*
-	Generated on 09/05/2025 by UI Generator PRICES-IDE
+	Generated on 23/05/2025 by UI Generator PRICES-IDE
 	https://amanah.cs.ui.ac.id/research/ifml-regen
 	version 3.9.0
 */
@@ -126,37 +126,37 @@ Timelog
 
 
 /*
-	Generated on 09/05/2025 by UI Generator PRICES-IDE
+	Generated on 23/05/2025 by UI Generator PRICES-IDE
 	https://amanah.cs.ui.ac.id/research/ifml-regen
 	version 3.9.0
 */
 	
 /*
-	Generated on 09/05/2025 by UI Generator PRICES-IDE
+	Generated on 23/05/2025 by UI Generator PRICES-IDE
 	https://amanah.cs.ui.ac.id/research/ifml-regen
 	version 3.9.0
 */
 	
 /*
-	Generated on 09/05/2025 by UI Generator PRICES-IDE
+	Generated on 23/05/2025 by UI Generator PRICES-IDE
 	https://amanah.cs.ui.ac.id/research/ifml-regen
 	version 3.9.0
 */
 	
 /*
-	Generated on 09/05/2025 by UI Generator PRICES-IDE
+	Generated on 23/05/2025 by UI Generator PRICES-IDE
 	https://amanah.cs.ui.ac.id/research/ifml-regen
 	version 3.9.0
 */
 	
 /*
-	Generated on 09/05/2025 by UI Generator PRICES-IDE
+	Generated on 23/05/2025 by UI Generator PRICES-IDE
 	https://amanah.cs.ui.ac.id/research/ifml-regen
 	version 3.9.0
 */
 
 /*
-	Generated on 09/05/2025 by UI Generator PRICES-IDE
+	Generated on 23/05/2025 by UI Generator PRICES-IDE
 	https://amanah.cs.ui.ac.id/research/ifml-regen
 	version 3.9.0
 */
@@ -170,13 +170,13 @@ BurndownByMember
 
 
 /*
-	Generated on 09/05/2025 by UI Generator PRICES-IDE
+	Generated on 23/05/2025 by UI Generator PRICES-IDE
 	https://amanah.cs.ui.ac.id/research/ifml-regen
 	version 3.9.0
 */
 	
 /*
-	Generated on 09/05/2025 by UI Generator PRICES-IDE
+	Generated on 23/05/2025 by UI Generator PRICES-IDE
 	https://amanah.cs.ui.ac.id/research/ifml-regen
 	version 3.9.0
 */
@@ -193,41 +193,83 @@ Task
 
 
 /*
-	Generated on 09/05/2025 by UI Generator PRICES-IDE
+	Generated on 23/05/2025 by UI Generator PRICES-IDE
 	https://amanah.cs.ui.ac.id/research/ifml-regen
 	version 3.9.0
 */
 	
 /*
-	Generated on 09/05/2025 by UI Generator PRICES-IDE
+	Generated on 23/05/2025 by UI Generator PRICES-IDE
 	https://amanah.cs.ui.ac.id/research/ifml-regen
 	version 3.9.0
 */
 	
 /*
-	Generated on 09/05/2025 by UI Generator PRICES-IDE
+	Generated on 23/05/2025 by UI Generator PRICES-IDE
 	https://amanah.cs.ui.ac.id/research/ifml-regen
 	version 3.9.0
 */
 	
 /*
-	Generated on 09/05/2025 by UI Generator PRICES-IDE
+	Generated on 23/05/2025 by UI Generator PRICES-IDE
 	https://amanah.cs.ui.ac.id/research/ifml-regen
 	version 3.9.0
 */
 
 /*
-	Generated on 09/05/2025 by UI Generator PRICES-IDE
+	Generated on 23/05/2025 by UI Generator PRICES-IDE
 	https://amanah.cs.ui.ac.id/research/ifml-regen
 	version 3.9.0
 */
 
 /*
-	Generated on 09/05/2025 by UI Generator PRICES-IDE
+	Generated on 23/05/2025 by UI Generator PRICES-IDE
 	https://amanah.cs.ui.ac.id/research/ifml-regen
 	version 3.9.0
 */
 
+
+
+
+
+TimelogDuration
+	tes1 Add Timelog Page
+	tes1 Edit Timelog Page
+
+
+
+
+
+
+
+
+TimelogSession
+	tes1 Add Timelog Page
+	tes1 Edit Timelog Page
+
+
+
+
+
+
+
+
+BurndownByProject
+	tes1 Burndown Chart by Project Page
+
+
+/*
+	Generated on 23/05/2025 by UI Generator PRICES-IDE
+	https://amanah.cs.ui.ac.id/research/ifml-regen
+	version 3.9.0
+*/
+	
+/*
+	Generated on 23/05/2025 by UI Generator PRICES-IDE
+	https://amanah.cs.ui.ac.id/research/ifml-regen
+	version 3.9.0
+*/
+	
 
 
 

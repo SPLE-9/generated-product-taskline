@@ -10,9 +10,7 @@ import { Link } from "react-router";
 import { useParams } from "@/commons/hooks/useParams"
 import { HeaderContext } from "@/commons/components"
 import { useSearchParams } from "react-router";
-import FormFormEditTimelog from '../components/FormFormEditTimelog'
-
-import getEditTimelogData from '../services/getEditTimelogData'
+import ModifiedFormFormEditTimelog from '../components/ModifiedFormFormEditTimelog'
 const EditTimelogPage = props => {
 const [isLoading, setIsLoading] = useState({
 	formEditTimelog: false,
@@ -20,20 +18,7 @@ const [isLoading, setIsLoading] = useState({
 	});
 	const { setTitle } = useContext(HeaderContext);
 
-const [editTimelogData, setEditTimelogData] = useState()
 
-useEffect(() => {
-    const fetch = async () => {
-	  setIsLoading(prev => ({...prev, formEditTimelog: true}))
-		const { data: editTimelogDataResponse } = await getEditTimelogData({ timelogId  })
-
-	    setEditTimelogData(editTimelogDataResponse.data)
-
-
-	    setIsLoading(prev => ({...prev, formEditTimelog: false}))
-    }
-	fetch()
-  }, [])
 
 	
 	useEffect(() => {
@@ -49,16 +34,8 @@ return (
 	>
 <Layouts.FormContainerLayout
 		singularName={"Edit"}
-		isLoading={isLoading.formEditTimelog}
+		
 	>
-		{editTimelogData ? 
-		(<>
-		 <FormFormEditTimelog
-			{...{ 
-				editTimelogData
-				}}
-		 /> 
-		</>)  : (<></>)}
 	</Layouts.FormContainerLayout>
 
 	</Layouts.ViewContainerLayout>

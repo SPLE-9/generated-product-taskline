@@ -9,22 +9,20 @@ import * as Layouts from '@/commons/layouts';
 import { Link } from "react-router";
 import { useParams } from "@/commons/hooks/useParams"
 import { HeaderContext } from "@/commons/components"
-import { useNavigate } from "react-router";
-import { useAuth } from '@/commons/auth';
-import WrapperTab from '../components/WrapperTab'
-const TimelogPage = props => {
-const { checkPermission } = useAuth();
-
-	const [isLoading, setIsLoading] = useState({
-	wrapperTab: false,
+import { useSearchParams } from "react-router";
+import ModifiedFormFormAddTimelog from '../components/ModifiedFormFormAddTimelog'
+const AddTimelogPage = props => {
+const [isLoading, setIsLoading] = useState({
+	formAddTimelog: false,
 
 	});
 	const { setTitle } = useContext(HeaderContext);
 
 
+
 	
 	useEffect(() => {
-		setTitle("Timelog Page")
+		setTitle("Add Timelog Page")
 	}, []);
 return (
 	<Layouts.ViewContainerLayout
@@ -34,10 +32,14 @@ return (
 			</>
 		}
 	>
-<WrapperTab />
+<Layouts.FormContainerLayout
+		singularName={"Add"}
+		
+	>
+	</Layouts.FormContainerLayout>
 
 	</Layouts.ViewContainerLayout>
   )
 }
-export default TimelogPage
+export default AddTimelogPage
 

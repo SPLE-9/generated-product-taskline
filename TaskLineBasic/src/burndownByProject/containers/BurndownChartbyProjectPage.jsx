@@ -14,12 +14,13 @@ import { useAuth } from '@/commons/auth';
 import TaskTable from "../components/TaskTable";
 import { getActualDataBinding, getPlannedDataBinding } from '../services/getDataBinding'
 
-const BurndownChartbyMemberPage = props => {
+const BurndownChartbyProjectPage = props => {
 const { checkPermission } = useAuth();
+const { projectId } = useParams();
 
 	const [isLoading, setIsLoading] = useState({
-	plannedTaskBurndownChartbyMember: false,
-	actualTaskBurndownChartbyMember: false,
+	plannedTaskBurndownChartbyProject: false,
+	actualTaskBurndownChartbyProject: false,
 	});
 	const { setTitle } = useContext(HeaderContext);
 
@@ -29,30 +30,30 @@ const { checkPermission } = useAuth();
 	useEffect(() => {
 		const fetchPlannedData = async () => {
 			try {
-				setIsLoading(prev => ({...prev, plannedTaskBurndownChartbyMember: true}))
-				const { data: dataBinding } = await getPlannedDataBinding()
+				setIsLoading(prev => ({...prev, plannedTaskBurndownChartbyProject: true}))
+				const { data: dataBinding } = await getPlannedDataBinding({ projectId })
 				setPlannedData(dataBinding.data)
 			} finally {
-				setIsLoading(prev => ({...prev, plannedTaskBurndownChartbyMember: false}))
+				setIsLoading(prev => ({...prev, plannedTaskBurndownChartbyProject: false}))
 			}
 		}
 		
 		const fetchActualData = async () => {
 			try {
-				setIsLoading(prev => ({...prev, actualTaskBurndownChartbyMember: true}))
-				const { data: dataBinding } = await getActualDataBinding()
+				setIsLoading(prev => ({...prev, actualTaskBurndownChartbyProject: true}))
+				const { data: dataBinding } = await getActualDataBinding({ projectId })
 				setActualData(dataBinding.data)
 			} finally {
-				setIsLoading(prev => ({...prev, actualTaskBurndownChartbyMember: false}))
+				setIsLoading(prev => ({...prev, actualTaskBurndownChartbyProject: false}))
 			}
 		}
 		
 		fetchPlannedData()
 		fetchActualData()
-  	}, [])
+  	}, [projectId])
 
 	useEffect(() => {
-		setTitle("Burndown Chart by Member Page")
+		setTitle("Burndown Chart by Project Page")
 	}, []);
 	
 return (
@@ -64,10 +65,10 @@ return (
 		}
 	>
 <Layouts.ListContainerTableLayout
-	title={"Planned Task Burndown Chart by Member"}
+	title={"Planned Task Burndown Chart by Project"}
 	singularName={"Task"}
 	items={[plannedData]}
-	isLoading={isLoading.plannedTaskBurndownChartbyMember}
+	isLoading={isLoading.plannedTaskBurndownChartbyProject}
 >
 	<TaskTable
 		dataBinding={plannedData}
@@ -75,10 +76,10 @@ return (
 	/>
 </Layouts.ListContainerTableLayout>
 <Layouts.ListContainerTableLayout
-	title={"Actual Task Burndown Chart by Member"}
+	title={"Actual Task Burndown Chart by Project"}
 	singularName={"Task"}
 	items={[actualData]}
-	isLoading={isLoading.actualTaskBurndownChartbyMember}
+	isLoading={isLoading.actualTaskBurndownChartbyProject}
 >
 	<TaskTable
 		dataBinding={actualData}
@@ -89,5 +90,5 @@ return (
 	</Layouts.ViewContainerLayout>
   )
 }
-export default BurndownChartbyMemberPage
+export default BurndownChartbyProjectPage
 

@@ -7,7 +7,7 @@ const getActualDataBinding = (params = {}) => {
 	const { getToken } = tokenManager();
 	const token = getToken();
 	let paramsGet = Object.assign(params, {token});
-	return axios.get(`${environment.rootApi}/call/burndownbymember/actual`, {
+	return axios.get(`${environment.rootApi}/call/burndownbyproject/actual`, {
 		params: paramsGet,		
 		headers: {
 			'Authorization': token,
@@ -22,7 +22,7 @@ const getPlannedDataBinding = (params = {}) => {
 	const { getToken } = tokenManager();
 	const token = getToken();
 	let paramsGet = Object.assign(params, {token});
-	return axios.get(`${environment.rootApi}/call/burndownbymember/planned`, {
+	return axios.get(`${environment.rootApi}/call/burndownbyproject/planned`, {
 		params: paramsGet,		
 		headers: {
 			'Authorization': token,

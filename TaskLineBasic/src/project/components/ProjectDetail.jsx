@@ -94,6 +94,7 @@ const ProjectDetail = ({ data }) => {
         ,
             <Button
           variant="secondary"
+          onClick={() => window.location.href = `/projectburndown/${data.projectId}`}
         >
           View Burndown
         </Button>
